@@ -17,6 +17,7 @@ import './types';
 import { VideoProvider } from './components/VideoProvider';
 import useConnectionOptions from './utils/useConnectionOptions/useConnectionOptions';
 import UnsupportedBrowserWarning from './components/UnsupportedBrowserWarning/UnsupportedBrowserWarning';
+import Features from './components/Features/Features';
 
 import HomePage from './components/HomePage/HomePage';
 
@@ -52,6 +53,9 @@ ReactDOM.render(
           </PrivateRoute>
           <Route path="/login">
             <LoginPage />
+          </Route>
+          <Route path="/features">
+            <Features />
           </Route>
           <Redirect to="/" />
           <Route path="/activities">
