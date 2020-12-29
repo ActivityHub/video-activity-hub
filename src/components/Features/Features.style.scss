@@ -2,13 +2,16 @@
   padding-top: 7vh;
   padding-left: 10vw;
   .features-item {
-    font-size: 3vw;
-    color: black;
+    margin-top: 8vh;
+    .features-text {
+      font-size: 3vw;
+      color: black;
+      bottom: 1.5vh;
+      position: relative;
+    }
     .features-svg {
       fill: #6574fe;
       width: 5vw;
-      // margin: 2rem;
-      margin-top: 8vh;
       margin-right: 5vw;
     }
   }
