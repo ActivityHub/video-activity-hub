@@ -97,6 +97,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 interface IntroContainerProps {
   children: React.ReactNode;
   subContent?: React.ReactNode;
+  roomName?: React.ReactNode;
 }
 
 const IntroContainer = (props: IntroContainerProps) => {
@@ -106,7 +107,6 @@ const IntroContainer = (props: IntroContainerProps) => {
 
   return (
     <div className={classes.background}>
-      <TwilioLogo className={classes.twilioLogo} />
       {user && location.pathname !== '/login' && <UserMenu />}
       <div className={classes.container}>
         <div className={classes.innerContainer}>
@@ -114,7 +114,8 @@ const IntroContainer = (props: IntroContainerProps) => {
             <div className={classes.logoContainer}>
               <VideoLogo />
               <Typography variant="h6" className={classes.title}>
-                Twilio Programmable Video
+                Activity Hub <br />
+                {props.roomName ? `${props.roomName} room` : 'Create a room'}
               </Typography>
             </div>
           </div>
