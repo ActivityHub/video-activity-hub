@@ -1,0 +1,14 @@
+.features-main {
+  padding: 5rem;
+  .features-item {
+    font-size: 3vw;
+    color: black;
+    .features-svg {
+      fill: #6574fe;
+      width: 5vw;
+      // margin: 2rem;
+      margin-top: 8vh;
+      margin-right: 5vw;
+    }
+  }
+}
