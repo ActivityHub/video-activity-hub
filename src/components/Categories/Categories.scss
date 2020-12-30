@@ -1,13 +1,27 @@
 @import '~bootstrap/scss/bootstrap';
 
 .category-background {
+  width: 100vw;
   background: #e5e5e5;
+}
+
+.MainActivities-Header {
+  padding: 3% 5% 0px 5%;
+  display: flex;
+  justify-content: space-between;
+  p {
+    font-size: 60px;
+  }
+}
+
+.category-container {
+  width: 100%;
 }
 
 .category-heading {
   display: inline-block;
   width: 100%;
-  margin-top: 67px;
+  margin-top: 45px;
   margin-bottom: 60px;
   align-items: center;
 }
@@ -34,17 +48,19 @@ p {
 }
 
 .category-pictures {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  margin-left: 89px;
-  margin-right: 87px;
+  // flex-wrap: wrap;
+  justify-content: center;
   padding: 0px 5px;
 }
 
 .cat-col {
-  flex: 25%;
+  width: 20%;
   padding: 5px 5px;
-  margin-top: 10px;
+  img:hover {
+    border: 7px solid #329dff;
+  }
 }
 
 // .image-overlay {
@@ -64,6 +80,9 @@ p {
   width: 250px;
   height: 256px;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   margin-bottom: 86px;
   border-radius: 15px;
   .image-overlay {
@@ -81,6 +100,9 @@ p {
   width: 250px;
   height: 256px;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   border-radius: 15px;
   .image-overlay {
     color: white;
@@ -100,6 +122,9 @@ p {
   width: 250px;
   height: 256px;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   margin-bottom: 86px;
   border-radius: 15px;
   .image-overlay {
@@ -117,6 +142,9 @@ p {
   width: 250px;
   height: 256px;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   border-radius: 15px;
   .image-overlay {
     color: white;
@@ -133,6 +161,9 @@ p {
   width: 250px;
   height: 256px;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   margin-bottom: 86px;
   border-radius: 15px;
   .image-overlay {
@@ -150,6 +181,9 @@ p {
   width: 250px;
   height: 256px;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   border-radius: 15px;
   .image-overlay {
     color: white;
@@ -166,6 +200,9 @@ p {
   width: 250px;
   height: 256px;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   margin-bottom: 86px;
   border-radius: 15px;
   .image-overlay {
@@ -183,6 +220,9 @@ p {
   width: 250px;
   height: 256px;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   border-radius: 15px;
   .image-overlay {
     color: white;

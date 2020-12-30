@@ -1,4 +1,5 @@
 import React from 'react';
+import Avatar from 'react-avatar';
 
 import { Button, Image } from 'react-bootstrap';
 import art from './images/art.png';
@@ -19,6 +20,15 @@ import './Categories.scss';
 const CategoriesPage = () => {
   return (
     <div className="category-background">
+      <div className="MainActivities-Header">
+        <p>The Hub</p>
+        <Avatar
+          size="80"
+          round={true}
+          className="avatar"
+          src="https://images.unsplash.com/photo-1550935114-99de2f488f47?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+        />
+      </div>
       <div className="category-container">
         <div className="category-heading">
           <h2>Let's Dig Deeper</h2>
