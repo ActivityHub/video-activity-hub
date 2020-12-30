@@ -39,7 +39,8 @@ ReactDOM.render(
       <AppStateProvider>
         <Switch>
           <PrivateRoute exact path="/">
-            <VideoApp />
+            {/* <VideoApp /> */}
+            <CategoriesPage />
           </PrivateRoute>
           <PrivateRoute path="/room/:URLRoomName">
             <VideoApp />
