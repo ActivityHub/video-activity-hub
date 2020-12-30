@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { makeStyles, Theme, Typography } from '@material-ui/core';
 import Swoosh from './swoosh';
 import VideoLogo from './VideoLogo';
@@ -93,16 +94,19 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-interface IntroContainerProps {
+interface RouterProps {
+  URLRoomName: string;
+}
+interface IntroContainerProps extends RouteComponentProps<RouterProps> {
   children: React.ReactNode;
   subContent?: React.ReactNode;
-  roomName?: React.ReactNode;
 }
 
 const IntroContainer = (props: IntroContainerProps) => {
   const classes = useStyles();
   const { user } = useAppState();
   const location = useLocation();
+  const roomName = props.match.params.URLRoomName;
 
   return (
     <div className={classes.background}>
@@ -114,7 +118,7 @@ const IntroContainer = (props: IntroContainerProps) => {
               <VideoLogo />
               <Typography variant="h6" className={classes.title}>
                 Activity Hub <br />
-                {props.roomName ? `${props.roomName} room` : 'Create a room'}
+                {roomName ? `${roomName} room` : 'Create a room'}
               </Typography>
             </div>
           </div>
@@ -126,4 +130,4 @@ const IntroContainer = (props: IntroContainerProps) => {
   );
 };
 
-export default IntroContainer;
+export default withRouter(IntroContainer);

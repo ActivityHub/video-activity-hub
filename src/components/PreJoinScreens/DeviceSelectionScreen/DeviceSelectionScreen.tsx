@@ -37,6 +37,21 @@ const useStyles = makeStyles((theme: Theme) => ({
       },
     },
   },
+  customCancel: {
+    borderColor: '#6574FE',
+    color: '#6574FE',
+    '&:hover': {
+      borderColor: '#6D4D97',
+      color: '#6D4D97',
+      backgroundColor: '#6574FE33',
+    },
+  },
+  customJoin: {
+    backgroundColor: '#6574FE',
+    '&:hover': {
+      backgroundColor: '#6D4D97',
+    },
+  },
   mobileButtonBar: {
     [theme.breakpoints.down('sm')]: {
       display: 'flex',
@@ -94,10 +109,16 @@ export default function DeviceSelectionScreen({ name, roomName, setStep }: Devic
               </Hidden>
             </div>
             <div className={classes.joinButtons}>
-              <Button variant="outlined" color="primary" onClick={() => setStep(Steps.roomNameStep)}>
+              <Button
+                className={classes.customCancel}
+                variant="outlined"
+                color="primary"
+                onClick={() => setStep(Steps.roomNameStep)}
+              >
                 Cancel
               </Button>
               <Button
+                className={classes.customJoin}
                 variant="contained"
                 color="primary"
                 data-cy-join-now
