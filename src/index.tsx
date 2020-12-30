@@ -51,9 +51,9 @@ ReactDOM.render(
             <NavBar />
             <HomePage />
           </Route>
-          <Route path="/room/:URLRoomName">
+          <PrivateRoute path="/room/:URLRoomName">
             <VideoApp />
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
             <CustomLogin />
             {/* <LoginPage /> */}

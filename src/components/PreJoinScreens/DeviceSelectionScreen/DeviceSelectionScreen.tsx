@@ -73,12 +73,18 @@ interface DeviceSelectionScreenProps {
 
 export default function DeviceSelectionScreen({ name, roomName, setStep }: DeviceSelectionScreenProps) {
   const classes = useStyles();
-  const { getToken, isFetching } = useAppState();
+  const { getToken, isFetching, user } = useAppState();
   const { connect, isAcquiringLocalTracks, isConnecting } = useVideoContext();
   const disableButtons = isFetching || isAcquiringLocalTracks || isConnecting;
+  let userName: string = '';
 
   const handleJoin = () => {
-    getToken(name, roomName).then(token => connect(token));
+    if (user) {
+      userName = user?.displayName!;
+    } else {
+      userName = name;
+    }
+    getToken(userName, roomName).then(token => connect(token));
   };
 
   return (
