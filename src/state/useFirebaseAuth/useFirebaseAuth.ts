@@ -69,6 +69,16 @@ export default function useFirebaseAuth() {
         setUser(user.user);
       });
   }, []);
+  const twitterSignIn = useCallback(() => {
+    const provider = new firebase.auth.TwitterAuthProvider();
+
+    return firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then(user => {
+        setUser(user.user);
+      });
+  }, []);
 
   const signOut = useCallback(() => {
     return firebase
@@ -79,5 +89,5 @@ export default function useFirebaseAuth() {
       });
   }, []);
 
-  return { user, signIn, signOut, isAuthReady, getToken, facebookSignIn, gitHubSignIn };
+  return { user, signIn, signOut, isAuthReady, getToken, facebookSignIn, gitHubSignIn, twitterSignIn };
 }

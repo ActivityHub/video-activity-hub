@@ -7,6 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import AppleIcon from '@material-ui/icons/Apple';
+import GitHubIcon from '@material-ui/icons/GitHub';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
@@ -57,7 +58,7 @@ const CustomLogin = ({ classes }) => {
   }));
 
   // const classes = useStyles();
-  const { signIn, user, isAuthReady, facebookSignIn } = useAppState();
+  const { signIn, user, isAuthReady, facebookSignIn, twitterSignIn, gitHubSignIn } = useAppState();
   const history = useHistory();
   const location = useLocation();
   const [passcode, setPasscode] = useState('');
@@ -66,7 +67,7 @@ const CustomLogin = ({ classes }) => {
   const isAuthEnabled = Boolean(process.env.REACT_APP_SET_AUTH);
 
   if (user || !isAuthEnabled) {
-    history.replace('/');
+    history.replace('/activities');
   }
 
   if (!isAuthReady) {
@@ -87,6 +88,26 @@ const CustomLogin = ({ classes }) => {
     setAuthError(null);
     if (facebookSignIn) {
       facebookSignIn(passcode)
+        .then(() => {
+          history.replace(location?.state?.from || { pathname: '/' });
+        })
+        .catch(err => setAuthError(err));
+    }
+  };
+  const twitterLogin = () => {
+    setAuthError(null);
+    if (twitterSignIn) {
+      twitterSignIn(passcode)
+        .then(() => {
+          history.replace(location?.state?.from || { pathname: '/' });
+        })
+        .catch(err => setAuthError(err));
+    }
+  };
+  const gitHubLogin = () => {
+    setAuthError(null);
+    if (gitHubSignIn) {
+      gitHubSignIn(passcode)
         .then(() => {
           history.replace(location?.state?.from || { pathname: '/' });
         })
@@ -168,13 +189,23 @@ const CustomLogin = ({ classes }) => {
           <FacebookIcon />
           Sign in with Facebook
         </Button>
-        <Button style={{ marginBottom: '10px' }} variant="contained" className={classes.googleButton}>
+        <Button
+          style={{ marginBottom: '10px' }}
+          variant="contained"
+          className={classes.googleButton}
+          onClick={twitterLogin}
+        >
           <TwitterIcon style={{ margin: '0 10px 5px 0' }} />
           Sign in with Twitter
         </Button>
-        <Button style={{ marginBottom: '10px' }} variant="contained" className={classes.googleButton}>
-          <AppleIcon style={{ margin: '0 10px 5px 0' }} />
-          Sign in with Apple ID
+        <Button
+          style={{ marginBottom: '10px' }}
+          variant="contained"
+          className={classes.googleButton}
+          onClick={gitHubLogin}
+        >
+          <GitHubIcon style={{ margin: '0 10px 5px 0' }} />
+          Sign in with GitHub
         </Button>
       </div>
       <Typography align="center" variant="subtitle">
