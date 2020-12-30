@@ -18,6 +18,7 @@ import { VideoProvider } from './components/VideoProvider';
 import useConnectionOptions from './utils/useConnectionOptions/useConnectionOptions';
 import UnsupportedBrowserWarning from './components/UnsupportedBrowserWarning/UnsupportedBrowserWarning';
 import Features from './components/Features/Features';
+import MainActivities from './components/MainActivities/MainActivities';
 
 import CategoriesPage from './components/Categories/Categories';
 import HomePage from './components/HomePage/HomePage';
@@ -67,6 +68,10 @@ ReactDOM.render(
           <Route path="/categories">
             <NavBar />
             <CategoriesPage />
+          </Route>
+          <Route path="/activities">
+            <NavBar />
+            <MainActivities />
           </Route>
           <Redirect to="/" />
         </Switch>
