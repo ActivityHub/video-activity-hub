@@ -17,6 +17,7 @@ import useConnectionOptions from './utils/useConnectionOptions/useConnectionOpti
 import UnsupportedBrowserWarning from './components/UnsupportedBrowserWarning/UnsupportedBrowserWarning';
 
 import HomePage from './components/HomePage/HomePage';
+import NavBar from './components/NavBar/NavBar';
 
 const VideoApp = () => {
   const { error, setError } = useAppState();
@@ -41,6 +42,7 @@ ReactDOM.render(
           <PrivateRoute exact path="/">
             {/* Originally <VideoApp />, remove <HomePage /> after building and testing */}
             {/* <VideoApp /> */}
+            <NavBar />
             <HomePage />
           </PrivateRoute>
           <PrivateRoute path="/room/:URLRoomName">
