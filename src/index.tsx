@@ -63,11 +63,10 @@ ReactDOM.render(
           <Route path="/features">
             <Features />
           </Route>
-          <Redirect to="/" />
           <Route path="/activities">
             <CategoriesPage />
           </Route>
-          {/* <Redirect to="/" /> */}
+          <Redirect to="/" />
         </Switch>
       </AppStateProvider>
     </Router>
