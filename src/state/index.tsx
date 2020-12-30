@@ -13,6 +13,8 @@ export interface StateContextType {
   getToken(name: string, room: string, passcode?: string): Promise<string>;
   user?: User | null | { displayName: undefined; photoURL: undefined; passcode?: string };
   signIn?(passcode?: string): Promise<void>;
+  facebookSignIn?(passcode?: string): Promise<void>;
+  gitHubSignIn?(passcode?: string): Promise<void>;
   signOut?(): Promise<void>;
   isAuthReady?: boolean;
   isFetching: boolean;
