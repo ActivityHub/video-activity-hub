@@ -47,6 +47,8 @@ ReactDOM.render(
             <CategoriesPage />
             <VideoApp />
             {/* Originally <VideoApp />, remove <HomePage /> after building and testing */}
+            <CustomLogin />
+            {/* <RegisterPage /> */}
             {/* <VideoApp /> */}
             <NavBar />
             <HomePage />
