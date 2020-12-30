@@ -25,14 +25,62 @@ const CategoriesPage = () => {
           <h6>Select 5+ interests and we will suggest exciting experiences you can be part of</h6>
         </div>
         <div className="category-pictures">
-          <Image src={art} rounded width="150" height="150" alt="Art" className="art" />
-          <Image src={music} rounded width="150" height="150" alt="Music" className="music" />
-          <Image src={photo} rounded width="150" height="150" alt="Photo" className="photo" />
-          <Image src={cooking} rounded width="150" height="150" alt="Cooking" className="cooking" />
-          <Image src={dance} rounded width="150" height="150" alt="Dance" className="dance" />
-          <Image src={mixology} rounded width="150" height="150" alt="Mixology" className="mixology" />
-          <Image src={gaming} rounded width="150" height="150" alt="Gaming" className="gaming" />
-          <Image src={fitness} rounded width="150" height="150" alt="Fitness" className="fitness" />
+          <div className="cat-col">
+            <div className="art">
+              <Image src={art} rounded width="150" height="150" alt="Art" className="art-image" />
+              <div className="image-overlay">
+                <div className="image-text">ART</div>
+              </div>
+            </div>
+            <div className="music">
+              <Image src={music} rounded width="150" height="150" alt="Music" className="music-image" />
+              <div className="image-overlay">
+                <div className="image-text">MUSIC</div>
+              </div>
+            </div>
+          </div>
+          <div className="cat-col">
+            <div className="photo">
+              <Image src={photo} rounded width="150" height="150" alt="Photo" className="photo-image" />
+              <div className="image-overlay">
+                <div className="image-text">PHOTO</div>
+              </div>
+            </div>
+            <div className="cooking">
+              <Image src={cooking} rounded width="150" height="150" alt="Cooking" className="cooking-image" />
+              <div className="image-overlay">
+                <div className="image-text">COOKING</div>
+              </div>
+            </div>
+          </div>
+          <div className="cat-col">
+            <div className="dance">
+              <Image src={dance} rounded width="150" height="150" alt="Dance" className="dance-image" />
+              <div className="image-overlay">
+                <div className="image-text">DANCE</div>
+              </div>
+            </div>
+            <div className="mixology">
+              <Image src={mixology} rounded width="150" height="150" alt="Mixology" className="mixology-image" />
+              <div className="image-overlay">
+                <div className="image-text">MIXOLOGY</div>
+              </div>
+            </div>
+          </div>
+          <div className="cat-col">
+            <div className="gaming">
+              <Image src={gaming} rounded width="150" height="150" alt="Gaming" className="gaming-image" />
+              <div className="image-overlay">
+                <div className="image-text">GAMING</div>
+              </div>
+            </div>
+            <div className="fitness">
+              <Image src={fitness} rounded width="150" height="150" alt="Fitness" className="fitness-image" />
+              <div className="image-overlay">
+                <div className="image-text">FITNESS</div>
+              </div>
+            </div>
+          </div>
         </div>
         <Button variant="primary" className="viewall-btn">
           View All Categories
