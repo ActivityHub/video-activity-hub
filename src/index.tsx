@@ -20,6 +20,7 @@ import UnsupportedBrowserWarning from './components/UnsupportedBrowserWarning/Un
 import Features from './components/Features/Features';
 
 import HomePage from './components/HomePage/HomePage';
+import CategoriesPage from './components/Categories/Categories.js';
 
 const VideoApp = () => {
   const { error, setError } = useAppState();
