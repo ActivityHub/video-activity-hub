@@ -41,6 +41,7 @@ ReactDOM.render(
           <PrivateRoute exact path="/">
             {/* <VideoApp /> */}
             <CategoriesPage />
+            <VideoApp />
           </PrivateRoute>
           <PrivateRoute path="/room/:URLRoomName">
             <VideoApp />
