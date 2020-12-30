@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import { Button, Image } from 'react-bootstrap';
 import art from './images/art.png';
 import music from './images/music.png';
@@ -89,9 +89,11 @@ const CategoriesPage = () => {
           <Button variant="secondary" className="viewall-btn">
             View all categories
           </Button>
-          <Button variant="primary" className="done-btn">
-            Done
-          </Button>
+          <Link to="/activities">
+            <Button variant="primary" className="done-btn">
+              Done
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

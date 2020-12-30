@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './MainActivities.scss';
 
-import Avatar from 'react-avatar';
+// import Avatar from 'react-avatar';
 import { Card, CardDeck, Button, Form, FormControl } from 'react-bootstrap';
 import baking from '../../images/mainactivities-baking.png';
 import broadway from '../../images/mainactivities-broadway.png';
@@ -19,7 +20,7 @@ import santorini from '../../images/mainactivities-santorini.png';
 const MainActivities = () => {
   return (
     <div className="MainActivities-Wrapper">
-      <div className="MainActivities-Header">
+      {/* <div className="MainActivities-Header">
         <p>The Hub</p>
         <Avatar
           size="80"
@@ -27,7 +28,7 @@ const MainActivities = () => {
           className="avatar"
           src="https://images.unsplash.com/photo-1550935114-99de2f488f47?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
         />
-      </div>
+      </div> */}
       <div className="MainActivities-SearchBar">
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
@@ -53,12 +54,14 @@ const MainActivities = () => {
         <div className="MainActivities-Weekly-Container">
           <CardDeck>
             <Card bg="card-theme">
-              <Card.Img variant="top" src={piano} />
-              <Card.Body>
-                <Card.Title>Piano Classics</Card.Title>
-                <Card.Text className="date">Jan 7, 2020</Card.Text>
-                <Card.Text className="price">$15.00/person</Card.Text>
-              </Card.Body>
+              <Link to="/room/piano-classic">
+                <Card.Img variant="top" src={piano} />
+                <Card.Body>
+                  <Card.Title>Piano Classics</Card.Title>
+                  <Card.Text className="date">Jan 7, 2020</Card.Text>
+                  <Card.Text className="price">$15.00/person</Card.Text>
+                </Card.Body>
+              </Link>
             </Card>
             <Card bg="card-theme">
               <Card.Img variant="top" src={salad} />
