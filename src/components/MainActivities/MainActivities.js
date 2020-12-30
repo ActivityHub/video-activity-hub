@@ -2,7 +2,7 @@ import React from 'react';
 import './MainActivities.scss';
 
 import Avatar from 'react-avatar';
-import { Card, CardDeck, Button } from 'react-bootstrap';
+import { Card, CardDeck, Button, Form, FormControl } from 'react-bootstrap';
 import baking from '../../images/mainactivities-baking.png';
 import broadway from '../../images/mainactivities-broadway.png';
 import cocktail from '../../images/mainactivities-cocktail.png';
@@ -22,16 +22,31 @@ const MainActivities = () => {
       <div className="MainActivities-Header">
         <p>The Hub</p>
         <Avatar
-          size="60"
+          size="80"
           round={true}
           className="avatar"
           src="https://images.unsplash.com/photo-1550935114-99de2f488f47?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
         />
       </div>
-      <div className="MainActivities-SearchBar"></div>
+      <div className="MainActivities-SearchBar">
+        <Form inline>
+          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+          <Button variant="outline-success">Search</Button>
+        </Form>
+      </div>
       <div className="MainActivities-Filter">
-        <div className="MainActivities-Filter1"></div>
-        <div className="MainActivities-Filter2"></div>
+        <div className="MainActivities-Filter1">
+          <Button variant="outline-secondary">Dates</Button>
+          <Button variant="outline-secondary">Time of day</Button>
+          <Button variant="outline-secondary">Price</Button>
+          <Button variant="outline-secondary">Language offered</Button>
+        </div>
+        <div className="MainActivities-Filter2">
+          <Button variant="outline-success">Mixology</Button>
+          <Button variant="outline-success">Cooking</Button>
+          <Button variant="outline-success">Music</Button>
+          <Button variant="outline-success">World Travel</Button>
+        </div>
       </div>
       <div className="MainActivities-Weekly-Wrapper">
         <h2>This Week's Events</h2>
@@ -150,9 +165,11 @@ const MainActivities = () => {
           </CardDeck>
         </div>
       </div>
-      <Button variant="primary" className="MainActivities-btn">
-        Load More
-      </Button>
+      <div className="MainActivities-btn-Wrapper">
+        <Button variant="primary" className="MainActivities-btn">
+          Load More
+        </Button>
+      </div>
     </div>
   );
 };
