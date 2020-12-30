@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './HomePage.scss';
 import { Button, Image } from 'react-bootstrap';
 import background from '../../images/homepage-bkg.png';
