@@ -39,7 +39,28 @@ export default function useFirebaseAuth() {
 
   const signIn = useCallback(() => {
     const provider = new firebase.auth.GoogleAuthProvider();
-    provider.addScope('https://www.googleapis.com/auth/plus.login');
+    googleProvider.setCustomParameters({ prompt: 'select_account' });
+    // provider.addScope('https://www.googleapis.com/auth/plus.login');
+
+    return firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then(user => {
+        setUser(user.user);
+      });
+  }, []);
+  const facebookSignIn = useCallback(() => {
+    const provider = new firebase.auth.FacebookAuthProvider();
+
+    return firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then(user => {
+        setUser(user.user);
+      });
+  }, []);
+  const gitHubSignIn = useCallback(() => {
+    const provider = new firebase.auth.GithubAuthProvider();
 
     return firebase
       .auth()
@@ -58,5 +79,5 @@ export default function useFirebaseAuth() {
       });
   }, []);
 
-  return { user, signIn, signOut, isAuthReady, getToken };
+  return { user, signIn, signOut, isAuthReady, getToken, facebookSignIn, gitHubSignIn };
 }
