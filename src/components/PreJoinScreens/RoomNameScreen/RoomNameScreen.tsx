@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: '100%',
   },
   continueButton: {
+    backgroundColor: '#6574FE',
     [theme.breakpoints.down('sm')]: {
       width: '100%',
     },
@@ -52,7 +53,7 @@ export default function RoomNameScreen({ name, roomName, setName, setRoomName, h
   return (
     <>
       <Typography variant="h5" className={classes.gutterBottom}>
-        Join a Room
+        Create a Room
       </Typography>
       <Typography variant="body1">
         {hasUsername

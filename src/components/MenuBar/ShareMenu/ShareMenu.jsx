@@ -20,6 +20,8 @@ import {
   WhatsappIcon,
 } from 'react-share';
 
+import './ShareMenu.styles.scss';
+
 const ShareMenu = props => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -56,21 +58,11 @@ const ShareMenu = props => {
         }}
         transformOrigin={{
           vertical: isMobile ? -55 : 'bottom',
-          horizontal: 'center',
+          horizontal: 'left',
         }}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={closeMenu}>
-          <FacebookShareButton
-            url={`https://video-activity-hub.herokuapp.com${props.match.url}`}
-            quote={`Join us in ${props.match.params.URLRoomName}`}
-            className="Demo__some-network__share-button"
-          >
-            <FacebookIcon size={32} round />
-            <span>Facebook</span>
-          </FacebookShareButton>
-        </MenuItem>
-        <MenuItem onClick={closeMenu}>
+        <MenuItem className="share-menu-item" onClick={closeMenu}>
           <EmailShareButton
             url={`https://video-activity-hub.herokuapp.com${props.match.url}`}
             quote={`Join us in ${props.match.params.URLRoomName}`}
@@ -80,7 +72,17 @@ const ShareMenu = props => {
             <span>Email</span>
           </EmailShareButton>
         </MenuItem>
-        <MenuItem onClick={closeMenu}>
+        <MenuItem className="share-menu-item" onClick={closeMenu}>
+          <FacebookShareButton
+            url={`https://video-activity-hub.herokuapp.com${props.match.url}`}
+            quote={`Join us in ${props.match.params.URLRoomName}`}
+            className="Demo__some-network__share-button"
+          >
+            <FacebookIcon size={32} round />
+            <span>Facebook</span>
+          </FacebookShareButton>
+        </MenuItem>
+        <MenuItem className="share-menu-item" onClick={closeMenu}>
           <LinkedinShareButton
             url={`https://video-activity-hub.herokuapp.com${props.match.url}`}
             quote={`Join us in ${props.match.params.URLRoomName}`}
@@ -90,7 +92,7 @@ const ShareMenu = props => {
             <span>LinkedIn</span>
           </LinkedinShareButton>
         </MenuItem>
-        <MenuItem onClick={closeMenu}>
+        <MenuItem className="share-menu-item" onClick={closeMenu}>
           <RedditShareButton
             url={`https://video-activity-hub.herokuapp.com${props.match.url}`}
             quote={`Join us in ${props.match.params.URLRoomName}`}
@@ -100,7 +102,7 @@ const ShareMenu = props => {
             <span>Reddit</span>
           </RedditShareButton>
         </MenuItem>
-        <MenuItem onClick={closeMenu}>
+        <MenuItem className="share-menu-item" onClick={closeMenu}>
           <TumblrShareButton
             url={`https://video-activity-hub.herokuapp.com${props.match.url}`}
             quote={`Join us in ${props.match.params.URLRoomName}`}
@@ -110,7 +112,7 @@ const ShareMenu = props => {
             <span>Tumblr</span>
           </TumblrShareButton>
         </MenuItem>
-        <MenuItem onClick={closeMenu}>
+        <MenuItem className="share-menu-item" onClick={closeMenu}>
           <TwitterShareButton
             url={`https://video-activity-hub.herokuapp.com${props.match.url}`}
             quote={`Join us in ${props.match.params.URLRoomName}`}
@@ -120,7 +122,7 @@ const ShareMenu = props => {
             <span>Twitter</span>
           </TwitterShareButton>
         </MenuItem>
-        <MenuItem onClick={closeMenu}>
+        <MenuItem className="share-menu-item" onClick={closeMenu}>
           <WhatsappShareButton
             url={`https://video-activity-hub.herokuapp.com${props.match.url}`}
             quote={`Join us in ${props.match.params.URLRoomName}`}
