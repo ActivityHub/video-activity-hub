@@ -1,3 +1,8 @@
+//Bootstrap custom themes
+$theme-colors: (
+  'card-theme': #c6c8ff,
+);
+
 @import '~bootstrap/scss/bootstrap';
 
 * {
@@ -8,15 +13,57 @@ h1 {
   font-size: 70px;
 }
 
+.MainActivities-Wrapper {
+  padding: 5%;
+  .MainActivities-Weekly-Wrapper,
+  .MainActivities-Aligned-Wrapper,
+  .MainActivities-New-Wrapper {
+    margin-bottom: 8%;
+    h2 {
+      font-size: 40px;
+    }
+  }
+}
+
+.MainActivities-Weekly-Container,
+.MainActivities-Aligned-Container,
+.MainActivities-New-Container {
+  margin-top: 4%;
+}
+
 .MainActivities-btn {
   width: max-content;
   padding: 2% 8%;
   background: linear-gradient(180deg, #6d72f7 0%, rgba(139, 84, 208, 0.85) 99.99%, rgba(167, 176, 254, 0) 100%);
   border-radius: 26px;
-  margin-top: 10%;
   font-size: 24px;
 }
 .MainActivities-btn:hover {
+  transform: scale(1.1);
+  transition: all 0.4s ease-in-out;
+}
+
+.card {
+  border-radius: 26px;
+  cursor: pointer;
+  .card-body {
+    .card-title {
+      font-size: 18px;
+      text-decoration: underline;
+      font-weight: 900;
+    }
+    .date {
+      font-size: 18px;
+      font-style: italic;
+      font-weight: bold;
+    }
+    .price {
+      font-size: 18px;
+    }
+  }
+}
+
+.card:hover {
   transform: scale(1.1);
   transition: all 0.4s ease-in-out;
 }
