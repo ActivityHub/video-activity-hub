@@ -91,8 +91,8 @@ const NavBar = () => {
           <Nav.Link as={Link} to="/features">
             Features
           </Nav.Link>
-          <Nav.Link as={Link} to="/contact">
-            Contact
+          <Nav.Link as={Link} to="/categories">
+            Categories
           </Nav.Link>
         </Nav>
         {user || !isAuthReady ? (

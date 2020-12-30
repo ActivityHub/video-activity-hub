@@ -22,7 +22,6 @@ import Features from './components/Features/Features';
 import CategoriesPage from './components/Categories/Categories';
 import HomePage from './components/HomePage/HomePage';
 import NavBar from './components/NavBar/NavBar';
-import CategoriesPage from './components/Categories/Categories.js';
 
 const VideoApp = () => {
   const { error, setError } = useAppState();
@@ -65,7 +64,7 @@ ReactDOM.render(
             <NavBar />
             <Features />
           </Route>
-          <Route path="/activities">
+          <Route path="/categories">
             <NavBar />
             <CategoriesPage />
           </Route>
