@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Twilio Video React App
 
 [![CircleCI](https://circleci.com/gh/twilio/twilio-video-app-react.svg?style=svg)](https://circleci.com/gh/twilio/twilio-video-app-react)
@@ -246,3 +247,6 @@ See [.env.example](.env.example) for an explanation of the environment variables
 ## License
 
 See the [LICENSE](LICENSE) file for details.
+=======
+# video-activity-hub
+>>>>>>> 730d1b83eb9b2d3fe2f716e00321ed8a0798acb8
