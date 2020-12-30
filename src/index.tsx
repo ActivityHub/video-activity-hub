@@ -44,7 +44,6 @@ ReactDOM.render(
         <Switch>
           <PrivateRoute exact path="/">
             {/* Originally <VideoApp />, remove <HomePage /> after building and testing */}
-            <CustomLogin />
             {/* <RegisterPage /> */}
             {/* <VideoApp /> */}
             <HomePage />
@@ -53,7 +52,8 @@ ReactDOM.render(
             <VideoApp />
           </PrivateRoute>
           <Route path="/login">
-            <LoginPage />
+            <CustomLogin />
+            {/* <LoginPage /> */}
           </Route>
           <Route path="/features">
             <Features />
