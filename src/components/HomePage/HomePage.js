@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './HomePage.scss';
 import { Button, Image } from 'react-bootstrap';
 import background from '../../images/homepage-bkg.png';
@@ -11,7 +12,7 @@ const HomePage = () => {
     <div className="homepage-wrapper" style={{ backgroundImage: `url(${background})` }}>
       <div className="homepage-title-container">
         <h1>Create experiences together</h1>
-        <Button variant="primary" className="homepage-btn">
+        <Button variant="primary" className="homepage-btn" href="/login">
           Sign Up
         </Button>
       </div>

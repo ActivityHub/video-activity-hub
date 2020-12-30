@@ -49,7 +49,6 @@ ReactDOM.render(
             <CategoriesPage />
             <VideoApp />
             {/* Originally <VideoApp />, remove <HomePage /> after building and testing */}
-            <CustomLogin />
             {/* <RegisterPage /> */}
             {/* <VideoApp /> */}
             <NavBar />
@@ -59,7 +58,8 @@ ReactDOM.render(
             <VideoApp />
           </PrivateRoute>
           <Route path="/login">
-            <LoginPage />
+            <CustomLogin />
+            {/* <LoginPage /> */}
           </Route>
           <Route path="/features">
             <Features />
