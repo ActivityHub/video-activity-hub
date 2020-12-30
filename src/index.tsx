@@ -62,9 +62,11 @@ ReactDOM.render(
             <RegisterPage />
           </Route>
           <Route path="/features">
+            <NavBar />
             <Features />
           </Route>
           <Route path="/activities">
+            <NavBar />
             <CategoriesPage />
           </Route>
           <Redirect to="/" />

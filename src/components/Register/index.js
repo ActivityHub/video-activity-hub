@@ -3,7 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import RegisterImage from './../../images/CatChau-18.png';
 import FacebookIcon from '@material-ui/icons/Facebook';
-import AppleIcon from '@material-ui/icons/Apple';
+import GitHubIcon from '@material-ui/icons/GitHub';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import Button from '@material-ui/core/Button';
 import { ReactComponent as GoogleLogo } from './google-logo.svg';
@@ -79,7 +79,7 @@ const RegisterPage = ({ classes }) => {
         <Typography style={{ color: '#878787', marginBottom: '20px' }} align="right" variant="subtitle">
           Already a member?{' '}
           <span>
-            <a href="">Sign In</a>
+            <a href="/login">Sign In</a>
           </span>
         </Typography>
         <div className={classes.createAccount}>
@@ -144,8 +144,8 @@ const RegisterPage = ({ classes }) => {
             Sign in with Twitter
           </Button>
           <Button style={{ marginBottom: '10px' }} variant="contained" className={classes.googleButton}>
-            <AppleIcon style={{ margin: '0 10px 5px 0' }} />
-            Sign in with Apple ID
+            <GitHubIcon style={{ margin: '0 10px 5px 0' }} />
+            Sign in with GitHub
           </Button>
         </div>
       </form>

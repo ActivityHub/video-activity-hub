@@ -209,7 +209,7 @@ const CustomLogin = ({ classes }) => {
         </Button>
       </div>
       <Typography align="center" variant="subtitle">
-        Don't have an account? <a href="">Sign up</a>
+        Don't have an account? <a href="/register">Sign up</a>
       </Typography>
     </div>
   );
