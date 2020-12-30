@@ -1,15 +1,43 @@
 @import '~bootstrap/scss/bootstrap';
 
+.category-background {
+  background: #e5e5e5;
+}
+
 .category-heading {
   display: inline-block;
-  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 67px;
+  margin-bottom: 60px;
+  align-items: center;
+}
+
+h2 {
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  display: flex;
+  margin-bottom: 22px;
   justify-content: center;
+}
+
+p {
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.heading-interests {
+  color: #6574fe;
 }
 
 .category-pictures {
   display: flex;
   flex-wrap: wrap;
-  margin: 10px 20px 10px 100px;
+  margin-left: 89px;
+  margin-right: 87px;
   padding: 0px 5px;
 }
 
@@ -17,99 +45,194 @@
   flex: 25%;
   padding: 5px 5px;
   margin-top: 10px;
-  margin-bottom: 10px;
 }
 
-.image-overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: 0.5s ease;
-  background-color: 'rgba(0,0,0,.5)';
-}
-
-.art .photo .dance .gaming {
-  margin-bottom: 50px;
-}
-
-.music .cooking .mixology .fitness {
-  margin-top: 50px;
-}
+// .image-overlay {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   height: 100%;
+//   width: 100%;
+//   opacity: 0;
+//   transition: 0.5s ease;
+//   background-color: 'rgba(0,0,0,.5)';
+// }
 
 .art {
-  &:hover .image-overlay {
-    opacity: 0.5;
+  width: 250px;
+  height: 256px;
+  position: relative;
+  margin-bottom: 86px;
+  border-radius: 15px;
+  .image-overlay {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
-.music:hover .image-overlay {
-  opacity: 0.5;
+.music {
+  width: 250px;
+  height: 256px;
+  position: relative;
+  border-radius: 15px;
+  .image-overlay {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &:hover {
+    background-color: red !important;
+  }
 }
 
-.photo:hover .image-overlay {
-  opacity: 0.5;
+.photo {
+  width: 250px;
+  height: 256px;
+  position: relative;
+  margin-bottom: 86px;
+  border-radius: 15px;
+  .image-overlay {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
-.cooking:hover .image-overlay {
-  opacity: 0.5;
+.cooking {
+  width: 250px;
+  height: 256px;
+  position: relative;
+  border-radius: 15px;
+  .image-overlay {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
-.dance:hover .image-overlay {
-  opacity: 0.5;
+.dance {
+  width: 250px;
+  height: 256px;
+  position: relative;
+  margin-bottom: 86px;
+  border-radius: 15px;
+  .image-overlay {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
-.mixology:hover .image-overlay {
-  opacity: 0.5;
+.mixology {
+  width: 250px;
+  height: 256px;
+  position: relative;
+  border-radius: 15px;
+  .image-overlay {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
-.gaming:hover .image-overlay {
-  opacity: 0.5;
+.gaming {
+  width: 250px;
+  height: 256px;
+  position: relative;
+  margin-bottom: 86px;
+  border-radius: 15px;
+  .image-overlay {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
-.fitness:hover .image-overlay {
-  opacity: 0.5;
+.fitness {
+  width: 250px;
+  height: 256px;
+  position: relative;
+  border-radius: 15px;
+  .image-overlay {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
-
-.image-text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+// .art {
+//   margin-bottom: 86px;
+//   &:hover .image-overlay {
+//     opacity: 0.5;
+//   }
+// }
 
 .category-btn {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
+  margin-top: 110px;
 }
 
 .viewall-btn {
   background-color: #6d4d97;
   color: white;
   font-family: Helvetica;
-  font-weight: bold;
-  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 36px;
   display: block;
-  height: 50px;
-  width: 400px;
-  margin-bottom: 10px;
+  height: 80px;
+  width: 600px;
+  border-radius: 10px;
+  margin-bottom: 31px;
 }
 
 .done-btn {
   background-color: #6574fe;
   color: white;
   font-family: Helvetica;
-  font-weight: bold;
-  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 36px;
   display: block;
-  height: 50px;
-  width: 400px;
+  height: 80px;
+  width: 600px;
+  border-radius: 10px;
 }
