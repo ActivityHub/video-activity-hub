@@ -50,6 +50,9 @@ ReactDOM.render(
             <LoginPage />
           </Route>
           <Redirect to="/" />
+          <Route path="/activities">
+            <CategoriesPage />
+          </Route>
         </Switch>
       </AppStateProvider>
     </Router>
