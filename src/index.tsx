@@ -39,8 +39,8 @@ ReactDOM.render(
       <AppStateProvider>
         <Switch>
           <PrivateRoute exact path="/">
-            {/* <CustomLogin/> */}
-            <RegisterPage />
+            <CustomLogin />
+            {/* <RegisterPage /> */}
             {/* <VideoApp /> */}
           </PrivateRoute>
           <PrivateRoute path="/room/:URLRoomName">
