@@ -5,7 +5,7 @@
 }
 
 .homepage-wrapper {
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
   background-size: cover;
   display: flex;
@@ -20,11 +20,11 @@
       font-weight: 900;
     }
     .homepage-btn {
-      width: min-content;
+      width: max-content;
       padding: 2% 8%;
       background: linear-gradient(180deg, #6d72f7 0%, rgba(139, 84, 208, 0.85) 99.99%, rgba(167, 176, 254, 0) 100%);
       border-radius: 26px;
-      margin-top: 6%;
+      margin-top: 10%;
       font-size: 24px;
     }
   }
@@ -33,7 +33,7 @@
     display: flex;
     flex-direction: column;
     margin-right: 6%;
-    margin-top: 5%;
+    margin-top: 10%;
     justify-content: space-between;
     .oldYoung {
       align-self: flex-end;
