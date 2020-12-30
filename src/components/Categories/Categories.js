@@ -1,5 +1,4 @@
-import React, { ChangeEvent, useState, FormEvent } from 'react';
-import { useAppState } from '../../state';
+import React from 'react';
 
 import { Button, Image } from 'react-bootstrap';
 import art from './images/art.png';
@@ -12,11 +11,10 @@ import gaming from './images/gaming.png';
 import fitness from './images/fitness.png';
 
 import './Categories.scss';
-// import { ReactComponent as GoogleLogo } from './google-logo.svg';
 
-import styled from 'styled-components';
-
-const useStyles = makeStyles((theme: Theme) => ({}));
+// import styled from 'styled-components';
+//
+// const useStyles = makeStyles((theme: Theme) => ({}));
 
 const CategoriesPage = () => {
   return (
@@ -46,6 +44,8 @@ const CategoriesPage = () => {
     </div>
   );
 };
+
+export default CategoriesPage;
 
 //   return (
 //     <Container>
