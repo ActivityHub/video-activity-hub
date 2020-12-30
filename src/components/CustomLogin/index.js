@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -16,7 +17,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 import { ReactComponent as GoogleLogo } from './google-logo.svg';
-import useFirebaseAuth from '../../state/useCustomAuth/useCustomAuth';
+import { useAppState } from '../../state';
 
 const CustomLogin = ({ classes }) => {
   const [values, setValues] = React.useState({
@@ -55,15 +56,42 @@ const CustomLogin = ({ classes }) => {
     },
   }));
 
+  // const classes = useStyles();
+  const { signIn, user, isAuthReady, facebookSignIn } = useAppState();
+  const history = useHistory();
+  const location = useLocation();
+  const [passcode, setPasscode] = useState('');
   const [authError, setAuthError] = useState(null);
 
-  const login = () => {
+  const isAuthEnabled = Boolean(process.env.REACT_APP_SET_AUTH);
+
+  if (user || !isAuthEnabled) {
+    history.replace('/');
+  }
+
+  if (!isAuthReady) {
+    return null;
+  }
+
+  const googleLogin = () => {
     setAuthError(null);
-    signIn?.(passcode)
-      .then(() => {
-        history.replace(location?.state?.from || { pathname: '/' });
-      })
-      .catch(err => setAuthError(err));
+    if (signIn) {
+      signIn(passcode)
+        .then(() => {
+          history.replace(location?.state?.from || { pathname: '/' });
+        })
+        .catch(err => setAuthError(err));
+    }
+  };
+  const facebookLogin = () => {
+    setAuthError(null);
+    if (facebookSignIn) {
+      facebookSignIn(passcode)
+        .then(() => {
+          history.replace(location?.state?.from || { pathname: '/' });
+        })
+        .catch(err => setAuthError(err));
+    }
   };
 
   return (
@@ -127,11 +155,16 @@ const CustomLogin = ({ classes }) => {
           variant="contained"
           className={classes.googleButton}
           startIcon={<GoogleLogo />}
-          onClick={login}
+          onClick={googleLogin}
         >
           Sign in with Google
         </Button>
-        <Button style={{ marginBottom: '10px' }} variant="contained" className={classes.googleButton}>
+        <Button
+          style={{ marginBottom: '10px' }}
+          variant="contained"
+          className={classes.googleButton}
+          onClick={facebookLogin}
+        >
           <FacebookIcon />
           Sign in with Facebook
         </Button>

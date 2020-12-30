@@ -42,18 +42,21 @@ ReactDOM.render(
     <Router>
       <AppStateProvider>
         <Switch>
-          <PrivateRoute exact path="/">
+          <Route exact path="/">
             {/* Originally <VideoApp />, remove <HomePage /> after building and testing */}
             {/* <RegisterPage /> */}
             {/* <VideoApp /> */}
             <HomePage />
-          </PrivateRoute>
-          <PrivateRoute path="/room/:URLRoomName">
+          </Route>
+          <Route path="/room/:URLRoomName">
             <VideoApp />
-          </PrivateRoute>
+          </Route>
           <Route path="/login">
             <CustomLogin />
             {/* <LoginPage /> */}
+          </Route>
+          <Route path="/register">
+            <RegisterPage />
           </Route>
           <Route path="/features">
             <Features />
