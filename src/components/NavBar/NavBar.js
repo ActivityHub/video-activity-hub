@@ -78,7 +78,7 @@ const NavBar = () => {
   }
 
   return (
-    <Navbar fixed="top">
+    <Navbar>
       <Navbar.Brand as={Link} to="/">
         <span className="NavBar-title">The Hub</span>
       </Navbar.Brand>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Avatar from 'react-avatar';
 
 import { Button, Image } from 'react-bootstrap';
 import art from './images/art.png';
