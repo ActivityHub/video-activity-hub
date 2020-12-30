@@ -17,6 +17,7 @@ import useConnectionOptions from './utils/useConnectionOptions/useConnectionOpti
 import UnsupportedBrowserWarning from './components/UnsupportedBrowserWarning/UnsupportedBrowserWarning';
 
 import CategoriesPage from './components/Categories/Categories';
+import HomePage from './components/HomePage/HomePage';
 
 const VideoApp = () => {
   const { error, setError } = useAppState();
@@ -42,6 +43,9 @@ ReactDOM.render(
             {/* <VideoApp /> */}
             <CategoriesPage />
             <VideoApp />
+            {/* Originally <VideoApp />, remove <HomePage /> after building and testing */}
+            {/* <VideoApp /> */}
+            <HomePage />
           </PrivateRoute>
           <PrivateRoute path="/room/:URLRoomName">
             <VideoApp />
@@ -53,6 +57,7 @@ ReactDOM.render(
           <Route path="/activities">
             <CategoriesPage />
           </Route>
+          {/* <Redirect to="/" /> */}
         </Switch>
       </AppStateProvider>
     </Router>
