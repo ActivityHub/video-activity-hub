@@ -16,6 +16,8 @@ import { VideoProvider } from './components/VideoProvider';
 import useConnectionOptions from './utils/useConnectionOptions/useConnectionOptions';
 import UnsupportedBrowserWarning from './components/UnsupportedBrowserWarning/UnsupportedBrowserWarning';
 
+import CategoriesPage from './components/Categories/Categories';
+
 const VideoApp = () => {
   const { error, setError } = useAppState();
   const connectionOptions = useConnectionOptions();
@@ -46,6 +48,9 @@ ReactDOM.render(
             <LoginPage />
           </Route>
           <Redirect to="/" />
+          <Route path="/activities">
+            <CategoriesPage />
+          </Route>
         </Switch>
       </AppStateProvider>
     </Router>
