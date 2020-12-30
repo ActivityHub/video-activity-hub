@@ -59,7 +59,7 @@ ReactDOM.render(
           </PrivateRoute>
           <Route path="/login">
             <CustomLogin />
-            <LoginPage />
+            {/* <LoginPage /> */}
           </Route>
           <Route path="/features">
             <Features />

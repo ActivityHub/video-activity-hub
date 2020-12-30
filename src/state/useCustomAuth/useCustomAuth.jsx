@@ -42,7 +42,7 @@ export default function useFirebaseAuth() {
   const googleSignIn = useCallback(() => {
     const provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope('https://www.googleapis.com/auth/plus.login');
-    provider.setCustomParameters({ prompt: 'select_account' });
+    // provider.setCustomParameters({ prompt: 'select_account' })
 
     return firebase
       .auth()

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -16,6 +16,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 import { ReactComponent as GoogleLogo } from './google-logo.svg';
+import useFirebaseAuth from '../../state/useCustomAuth/useCustomAuth';
 
 const CustomLogin = ({ classes }) => {
   const [values, setValues] = React.useState({
@@ -53,6 +54,18 @@ const CustomLogin = ({ classes }) => {
       },
     },
   }));
+
+  const [authError, setAuthError] = useState(null);
+
+  const login = () => {
+    setAuthError(null);
+    signIn?.(passcode)
+      .then(() => {
+        history.replace(location?.state?.from || { pathname: '/' });
+      })
+      .catch(err => setAuthError(err));
+  };
+
   return (
     <div className={classes.container}>
       <Typography align="center" variant="h4">
@@ -114,6 +127,7 @@ const CustomLogin = ({ classes }) => {
           variant="contained"
           className={classes.googleButton}
           startIcon={<GoogleLogo />}
+          onClick={login}
         >
           Sign in with Google
         </Button>
