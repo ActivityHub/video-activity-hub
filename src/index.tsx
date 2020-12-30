@@ -16,6 +16,8 @@ import { VideoProvider } from './components/VideoProvider';
 import useConnectionOptions from './utils/useConnectionOptions/useConnectionOptions';
 import UnsupportedBrowserWarning from './components/UnsupportedBrowserWarning/UnsupportedBrowserWarning';
 
+import MainActivities from './components/MainActivities/MainActivities';
+
 const VideoApp = () => {
   const { error, setError } = useAppState();
   const connectionOptions = useConnectionOptions();
@@ -44,6 +46,9 @@ ReactDOM.render(
           </PrivateRoute>
           <Route path="/login">
             <LoginPage />
+          </Route>
+          <Route path="/activities">
+            <MainActivities />
           </Route>
           <Redirect to="/" />
         </Switch>

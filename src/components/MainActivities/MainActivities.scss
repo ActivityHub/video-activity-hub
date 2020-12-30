@@ -1,0 +1,22 @@
+@import '~bootstrap/scss/bootstrap';
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+.MainActivities-btn {
+  width: max-content;
+  padding: 2% 8%;
+  background: linear-gradient(180deg, #6d72f7 0%, rgba(139, 84, 208, 0.85) 99.99%, rgba(167, 176, 254, 0) 100%);
+  border-radius: 26px;
+  margin-top: 10%;
+  font-size: 24px;
+}
+.MainActivities-btn:hover {
+  transform: scale(1.1);
+  transition: all 0.4s ease-in-out;
+}
