@@ -7,7 +7,6 @@ import AppleIcon from '@material-ui/icons/Apple';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import Button from '@material-ui/core/Button';
 import { ReactComponent as GoogleLogo } from './google-logo.svg';
-
 import Checkbox from '@material-ui/core/Checkbox';
 import { fade, withStyles, makeStyles } from '@material-ui/core/styles';
 import InputBase from '@material-ui/core/InputBase';

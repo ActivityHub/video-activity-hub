@@ -14,10 +14,19 @@ import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import { Link } from 'react-router-dom';
 
 import { ReactComponent as GoogleLogo } from './google-logo.svg';
 
 const CustomLogin = ({ classes }) => {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   const [values, setValues] = React.useState({
     password: '',
     showPassword: false,
@@ -54,85 +63,98 @@ const CustomLogin = ({ classes }) => {
     },
   }));
   return (
-    <div className={classes.container}>
-      <Typography align="center" variant="h4">
-        Welcome Back!
-      </Typography>
-      <FormControl className={classes.formStyle} variant="outlined">
-        <OutlinedInput
-          style={{ color: 'black', fontSize: '18px' }}
-          id="outlined-adornment-weight"
-          placeholder="email"
-          onChange={handleChange('weight')}
-          aria-describedby="outlined-weight-helper-text"
-          inputProps={{
-            'aria-label': 'weight',
-          }}
-          labelWidth={0}
-        />
-      </FormControl>
-      <FormControl className={classes.formStyle} variant="outlined">
-        <InputLabel htmlFor="outlined-adornment-password" style={{ color: '#949494', fontSize: '16px' }}>
-          Password
-        </InputLabel>
-        <OutlinedInput
-          id="outlined-adornment-password"
-          type={values.showPassword ? 'text' : 'password'}
-          value={values.password}
-          onChange={handleChange('password')}
-          endAdornment={
-            <InputAdornment position="end">
-              <IconButton
-                aria-label="toggle password visibility"
-                onClick={handleClickShowPassword}
-                onMouseDown={handleMouseDownPassword}
-                edge="end"
-              >
-                {values.showPassword ? <Visibility /> : <VisibilityOff />}
-              </IconButton>
-            </InputAdornment>
-          }
-          labelWidth={70}
-        />
-      </FormControl>
-      <Grid container justify="center">
-        <Button style={{ width: '80%', fontSize: '1.2rem' }} variant="contained" color="primary" type="submit">
-          Log In
-        </Button>
-      </Grid>
-      <Typography align="center" variant="subtitle">
-        Forgot your login details? <a href="">Click here</a>
-      </Typography>
-      <div>
-        <h5 className={classes.horizontalText}>
-          <span style={{ background: '#c1c1c1', padding: '0 15px ', fontSize: '1em' }}>OR</span>
-        </h5>
-      </div>
-      <div className={classes.btnWrap}>
-        <Button
-          style={{ marginBottom: '10px' }}
-          variant="contained"
-          className={classes.googleButton}
-          startIcon={<GoogleLogo />}
-        >
-          Sign in with Google
-        </Button>
-        <Button style={{ marginBottom: '10px' }} variant="contained" className={classes.googleButton}>
-          <FacebookIcon />
-          Sign in with Facebook
-        </Button>
-        <Button style={{ marginBottom: '10px' }} variant="contained" className={classes.googleButton}>
-          <TwitterIcon style={{ margin: '0 10px 5px 0' }} />
-          Sign in with Twitter
-        </Button>
-        <Button style={{ marginBottom: '10px' }} variant="contained" className={classes.googleButton}>
-          <AppleIcon style={{ margin: '0 10px 5px 0' }} />
-          Sign in with Apple ID
-        </Button>
-      </div>
-      <Typography align="center" variant="subtitle">
-        Don't have an account? <a href="">Sign up</a>
-      </Typography>
+    <div>
+      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+        Open dialog
+      </Button>
+      {open ? (
+        <div className={classes.container}>
+          <Typography align="center" variant="h4">
+            Welcome Back!
+          </Typography>
+          <FormControl className={classes.formStyle} variant="outlined">
+            <OutlinedInput
+              style={{ color: 'black', fontSize: '18px' }}
+              id="outlined-adornment-weight"
+              placeholder="email"
+              onChange={handleChange('weight')}
+              aria-describedby="outlined-weight-helper-text"
+              inputProps={{
+                'aria-label': 'weight',
+              }}
+              labelWidth={0}
+            />
+          </FormControl>
+          <FormControl className={classes.formStyle} variant="outlined">
+            <InputLabel htmlFor="outlined-adornment-password" style={{ color: '#949494', fontSize: '16px' }}>
+              Password
+            </InputLabel>
+            <OutlinedInput
+              id="outlined-adornment-password"
+              type={values.showPassword ? 'text' : 'password'}
+              value={values.password}
+              onChange={handleChange('password')}
+              endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                    {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                  </IconButton>
+                </InputAdornment>
+              }
+              labelWidth={70}
+            />
+          </FormControl>
+          <Grid container justify="center">
+            <Button
+              style={{ width: '80%', fontSize: '1.2rem' }}
+              variant="contained"
+              color="primary"
+              type="submit"
+              onClick={handleClose} //should be redirect to some whare
+            >
+              Log In
+            </Button>
+          </Grid>
+          <Typography align="center" variant="subtitle">
+            Forgot your login details? <Link to="/change-password">Click here</Link>
+          </Typography>
+          <div>
+            <h5 className={classes.horizontalText}>
+              <span style={{ background: '#c1c1c1', padding: '0 15px ', fontSize: '1em' }}>OR</span>
+            </h5>
+          </div>
+          <div className={classes.btnWrap}>
+            <Button
+              style={{ marginBottom: '10px' }}
+              variant="contained"
+              className={classes.googleButton}
+              startIcon={<GoogleLogo />}
+            >
+              Sign in with Google
+            </Button>
+            <Button style={{ marginBottom: '10px' }} variant="contained" className={classes.googleButton}>
+              <FacebookIcon />
+              Sign in with Facebook
+            </Button>
+            <Button style={{ marginBottom: '10px' }} variant="contained" className={classes.googleButton}>
+              <TwitterIcon style={{ margin: '0 10px 5px 0' }} />
+              Sign in with Twitter
+            </Button>
+            <Button style={{ marginBottom: '10px' }} variant="contained" className={classes.googleButton}>
+              <AppleIcon style={{ margin: '0 10px 5px 0' }} />
+              Sign in with Apple ID
+            </Button>
+          </div>
+          <Typography align="center" variant="subtitle">
+            Don't have an account? <Link to="/sign-up">Sign up</Link>
+          </Typography>
+        </div>
+      ) : null}
     </div>
   );
 };

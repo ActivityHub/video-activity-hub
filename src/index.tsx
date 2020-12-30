@@ -40,8 +40,10 @@ ReactDOM.render(
         <Switch>
           <PrivateRoute exact path="/">
             <CustomLogin />
-            {/* <RegisterPage /> */}
             {/* <VideoApp /> */}
+          </PrivateRoute>
+          <PrivateRoute exact path="/sign-up">
+            <RegisterPage />
           </PrivateRoute>
           <PrivateRoute path="/room/:URLRoomName">
             <VideoApp />
