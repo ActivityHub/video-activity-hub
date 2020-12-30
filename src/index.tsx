@@ -59,6 +59,7 @@ ReactDOM.render(
             {/* <LoginPage /> */}
           </Route>
           <Route path="/register">
+            <NavBar />
             <RegisterPage />
           </Route>
           <Route path="/features">
