@@ -110,7 +110,7 @@ export default createMuiTheme({
   },
   palette: {
     primary: {
-      main: '#027AC5',
+      main: '#6574FE',
     },
   },
   brand: '#E22525',
