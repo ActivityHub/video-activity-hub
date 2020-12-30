@@ -49,7 +49,7 @@ ReactDOM.render(
           <Route path="/login">
             <LoginPage />
           </Route>
-          {/* <Redirect to="/" /> */}
+          <Redirect to="/" />
         </Switch>
       </AppStateProvider>
     </Router>
