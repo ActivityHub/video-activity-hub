@@ -35,6 +35,7 @@ app.listen(port, error => {
 
 app.get('/token', (req, res) => {
   const { identity, roomName } = req.query;
+  console.log('is this launching? ', twilioAccountSid)
   const token = new AccessToken(twilioAccountSid, twilioApiKeySID, twilioApiKeySecret, {
     ttl: MAX_ALLOWED_SESSION_DURATION,
   });
