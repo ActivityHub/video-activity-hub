@@ -69,6 +69,7 @@ const CustomLogin = ({ classes }) => {
   if (user || !isAuthEnabled) {
     console.log('guessing this is launching', user);
     console.log('and this ', isAuthReady);
+    setTimeout(() => console.log('hopefully this waits'), 5000);
     history.replace('/activities');
   }
 
