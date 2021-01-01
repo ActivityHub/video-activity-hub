@@ -79,6 +79,7 @@ export default function DeviceSelectionScreen({ name, roomName, setStep }: Devic
   let userName: string = '';
 
   const handleJoin = () => {
+    console.log('are we making it here?, ', user);
     if (user) {
       userName = user?.displayName!;
     } else {
