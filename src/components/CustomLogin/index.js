@@ -67,6 +67,8 @@ const CustomLogin = ({ classes }) => {
   const isAuthEnabled = Boolean(process.env.REACT_APP_SET_AUTH);
 
   if (user || !isAuthEnabled) {
+    console.log('guessing this is launching', user);
+    console.log('and this ', isAuthReady);
     history.replace('/activities');
   }
 

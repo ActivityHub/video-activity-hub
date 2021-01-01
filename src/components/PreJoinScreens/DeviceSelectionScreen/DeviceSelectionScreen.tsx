@@ -85,7 +85,10 @@ export default function DeviceSelectionScreen({ name, roomName, setStep }: Devic
     } else {
       userName = name;
     }
-    getToken(userName, roomName).then(token => connect(token));
+    getToken(userName, roomName).then(token => {
+      console.log('are we getting a token? ', token);
+      connect(token);
+    });
   };
 
   return (
