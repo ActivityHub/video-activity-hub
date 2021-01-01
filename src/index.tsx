@@ -45,9 +45,6 @@ ReactDOM.render(
       <AppStateProvider>
         <Switch>
           <Route exact path="/">
-            {/* Originally <VideoApp />, remove <HomePage /> after building and testing */}
-            {/* <RegisterPage /> */}
-            {/* <VideoApp /> */}
             <NavBar />
             <HomePage />
           </Route>
@@ -56,7 +53,6 @@ ReactDOM.render(
           </PrivateRoute>
           <Route path="/login">
             <CustomLogin />
-            {/* <LoginPage /> */}
           </Route>
           <Route path="/register">
             <NavBar />
