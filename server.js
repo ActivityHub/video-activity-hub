@@ -61,7 +61,7 @@ app.post('/token', (req, res) => {
 app.post('/test', (req, res) => {
   res.status(202).send({ success: 'yay' })
 })
-app.get('sest', (req, res) => {
+app.get('/test', (req, res) => {
   res.status(202).send({ success: 'yay' })
 })
 

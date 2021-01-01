@@ -17,6 +17,7 @@
     "@types/twilio-video": "^2.7.0",
     "bootstrap": "^4.5.3",
     "concurrently": "^5.1.0",
+    "cors": "^2.8.5",
     "cross-env": "^7.0.2",
     "d3-timer": "^1.0.10",
     "express": "^4.17.1",
