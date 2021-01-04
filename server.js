@@ -12,6 +12,38 @@ const twilioApiKeySID = process.env.TWILIO_API_KEY_SID;
 const twilioApiKeySecret = process.env.TWILIO_API_KEY_SECRET;
 
 // app.use(express.static(path.join(__dirname, 'build')));
+app.get('/token', (req, res) => {
+  const { identity, roomName } = req.query;
+  console.log('is this launching? ', twilioAccountSid)
+  const token = new AccessToken(twilioAccountSid, twilioApiKeySID, twilioApiKeySecret, {
+    ttl: MAX_ALLOWED_SESSION_DURATION,
+  });
+  token.identity = identity;
+  const videoGrant = new VideoGrant({ room: roomName });
+  token.addGrant(videoGrant);
+  res.send(token.toJwt());
+  console.log(`issued token for ${identity} in room ${roomName}`);
+});
+
+app.post('/token', (req, res) => {
+  const { identity, roomName } = req.query;
+  console.log('is this launching? ', twilioAccountSid)
+  const token = new AccessToken(twilioAccountSid, twilioApiKeySID, twilioApiKeySecret, {
+    ttl: MAX_ALLOWED_SESSION_DURATION,
+  });
+  token.identity = identity;
+  const videoGrant = new VideoGrant({ room: roomName });
+  token.addGrant(videoGrant);
+  res.send(token.toJwt());
+  console.log(`issued token for ${identity} in room ${roomName}`);
+});
+
+app.post('/test', (req, res) => {
+  res.status(202).send({ success: 'yay' })
+})
+app.get('/test', (req, res) => {
+  res.status(202).send({ success: 'yay' })
+})
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'build')))
@@ -33,38 +65,6 @@ app.listen(port, error => {
 })
 
 
-app.get('/token', (req, res) => {
-  const { identity, roomName } = req.query;
-  console.log('is this launching? ', twilioAccountSid)
-  const token = new AccessToken(twilioAccountSid, twilioApiKeySID, twilioApiKeySecret, {
-    ttl: MAX_ALLOWED_SESSION_DURATION,
-  });
-  token.identity = identity;
-  const videoGrant = new VideoGrant({ room: roomName });
-  token.addGrant(videoGrant);
-  res.send(token.toJwt());
-  console.log(`issued token for ${identity} in room ${roomName}`);
-});
-
-// app.post('/token', (req, res) => {
-//   const { identity, roomName } = req.query;
-//   console.log('is this launching? ', twilioAccountSid)
-//   const token = new AccessToken(twilioAccountSid, twilioApiKeySID, twilioApiKeySecret, {
-//     ttl: MAX_ALLOWED_SESSION_DURATION,
-//   });
-//   token.identity = identity;
-//   const videoGrant = new VideoGrant({ room: roomName });
-//   token.addGrant(videoGrant);
-//   res.send(token.toJwt());
-//   console.log(`issued token for ${identity} in room ${roomName}`);
-// });
-
-// app.post('/test', (req, res) => {
-//   res.status(202).send({ success: 'yay' })
-// })
-// app.get('/test', (req, res) => {
-//   res.status(202).send({ success: 'yay' })
-// })
 
 // app.get('/', (_, res) => res.sendFile(path.join(__dirname, 'build/index.html')));
 
