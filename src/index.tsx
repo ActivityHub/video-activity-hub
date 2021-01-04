@@ -8,13 +8,20 @@ import App from './App';
 import AppStateProvider, { useAppState } from './state';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import ErrorDialog from './components/ErrorDialog/ErrorDialog';
-import LoginPage from './components/LoginPage/LoginPage';
+import CustomLogin from './components/CustomLogin';
+import RegisterPage from './components/Register';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import theme from './theme';
 import './types';
 import { VideoProvider } from './components/VideoProvider';
 import useConnectionOptions from './utils/useConnectionOptions/useConnectionOptions';
 import UnsupportedBrowserWarning from './components/UnsupportedBrowserWarning/UnsupportedBrowserWarning';
+import Features from './components/Features/Features';
+import MainActivities from './components/MainActivities/MainActivities';
+
+import CategoriesPage from './components/Categories/Categories';
+import HomePage from './components/HomePage/HomePage';
+import NavBar from './components/NavBar/NavBar';
 
 const VideoApp = () => {
   const { error, setError } = useAppState();
@@ -36,14 +43,31 @@ ReactDOM.render(
     <Router>
       <AppStateProvider>
         <Switch>
-          <PrivateRoute exact path="/">
-            <VideoApp />
-          </PrivateRoute>
+          <Route exact path="/">
+            <NavBar />
+            <HomePage />
+          </Route>
           <PrivateRoute path="/room/:URLRoomName">
             <VideoApp />
           </PrivateRoute>
           <Route path="/login">
-            <LoginPage />
+            <CustomLogin />
+          </Route>
+          <Route path="/register">
+            <NavBar />
+            <RegisterPage />
+          </Route>
+          <Route path="/features">
+            <NavBar />
+            <Features />
+          </Route>
+          <Route path="/categories">
+            <NavBar />
+            <CategoriesPage />
+          </Route>
+          <Route path="/activities">
+            <NavBar />
+            <MainActivities />
           </Route>
           <Redirect to="/" />
         </Switch>

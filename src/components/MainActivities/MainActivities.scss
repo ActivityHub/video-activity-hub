@@ -1,0 +1,114 @@
+//Bootstrap custom themes
+$theme-colors: (
+  'card-theme': #c6c8ff,
+);
+
+@import '~bootstrap/scss/bootstrap';
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+.MainActivities-Wrapper {
+  padding: 5%;
+  padding-top: 3%;
+  .MainActivities-Header {
+    display: flex;
+    justify-content: space-between;
+    p {
+      font-size: 60px;
+    }
+  }
+  .MainActivities-SearchBar {
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+  }
+  .MainActivities-Filter {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    padding-bottom: 5%;
+    border-bottom: 1px solid lightgray;
+    .MainActivities-Filter1 {
+      display: flex;
+      border-right: solid 1px gray;
+      padding: 0 1%;
+      .btn {
+        margin-right: 15px;
+      }
+    }
+    .MainActivities-Filter2 {
+      display: flex;
+      padding: 0 2%;
+      .btn {
+        margin-right: 15px;
+      }
+    }
+  }
+  .MainActivities-Weekly-Wrapper {
+    margin-top: 2%;
+  }
+  .MainActivities-Weekly-Wrapper,
+  .MainActivities-Aligned-Wrapper,
+  .MainActivities-New-Wrapper {
+    margin-bottom: 8%;
+    h2 {
+      font-size: 40px;
+    }
+  }
+}
+
+.MainActivities-Weekly-Container,
+.MainActivities-Aligned-Container,
+.MainActivities-New-Container {
+  margin-top: 4%;
+  a {
+    color: inherit;
+  }
+}
+
+.MainActivities-btn-Wrapper {
+  display: flex;
+  justify-content: center;
+  .MainActivities-btn {
+    width: max-content;
+    padding: 2% 8%;
+    background: linear-gradient(180deg, #6d72f7 0%, rgba(139, 84, 208, 0.85) 99.99%, rgba(167, 176, 254, 0) 100%);
+    border-radius: 26px;
+    font-size: 24px;
+  }
+  .MainActivities-btn:hover {
+    transform: scale(1.1);
+    transition: all 0.4s ease-in-out;
+  }
+}
+
+.card {
+  border-radius: 26px;
+  cursor: pointer;
+  .card-body {
+    .card-title {
+      font-size: 18px;
+      text-decoration: underline;
+      font-weight: 900;
+    }
+    .date {
+      font-size: 18px;
+      font-style: italic;
+      font-weight: bold;
+    }
+    .price {
+      font-size: 18px;
+    }
+  }
+}
+
+.card:hover {
+  transform: scale(1.1);
+  transition: all 0.4s ease-in-out;
+}

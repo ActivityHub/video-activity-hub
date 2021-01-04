@@ -13,6 +13,8 @@ import ToggleAudioButton from '../Buttons/ToggleAudioButton/ToggleAudioButton';
 import ToggleVideoButton from '../Buttons/ToggleVideoButton/ToggleVideoButton';
 import ToggleScreenShareButton from '../Buttons/ToogleScreenShareButton/ToggleScreenShareButton';
 
+import ShareMenu from './ShareMenu/ShareMenu';
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
@@ -90,6 +92,11 @@ export default function MenuBar() {
               <ToggleVideoButton disabled={isReconnecting} />
               <Hidden smDown>{!isSharingScreen && <ToggleScreenShareButton disabled={isReconnecting} />}</Hidden>
               <FlipCameraButton />
+            </Grid>
+          </Grid>
+          <Grid item>
+            <Grid container justify="center">
+              <ShareMenu />
             </Grid>
           </Grid>
           <Hidden smDown>

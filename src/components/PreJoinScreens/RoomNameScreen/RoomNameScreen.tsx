@@ -1,4 +1,5 @@
 import React, { ChangeEvent, FormEvent } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Typography, makeStyles, TextField, Grid, Button, InputLabel, Theme } from '@material-ui/core';
 import { useAppState } from '../../../state';
 
@@ -21,6 +22,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: '100%',
   },
   continueButton: {
+    backgroundColor: '#6574FE',
     [theme.breakpoints.down('sm')]: {
       width: '100%',
     },
@@ -52,7 +54,7 @@ export default function RoomNameScreen({ name, roomName, setName, setRoomName, h
   return (
     <>
       <Typography variant="h5" className={classes.gutterBottom}>
-        Join a Room
+        Create a Room
       </Typography>
       <Typography variant="body1">
         {hasUsername

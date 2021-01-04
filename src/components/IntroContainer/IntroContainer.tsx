@@ -1,8 +1,8 @@
 import React from 'react';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { makeStyles, Theme, Typography } from '@material-ui/core';
 import Swoosh from './swoosh';
 import VideoLogo from './VideoLogo';
-import TwilioLogo from './TwilioLogo';
 import { useAppState } from '../../state';
 import UserMenu from './UserMenu/UserMenu';
 import { useLocation } from 'react-router-dom';
@@ -94,7 +94,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-interface IntroContainerProps {
+interface RouterProps {
+  URLRoomName: string;
+}
+interface IntroContainerProps extends RouteComponentProps<RouterProps> {
   children: React.ReactNode;
   subContent?: React.ReactNode;
 }
@@ -103,10 +106,10 @@ const IntroContainer = (props: IntroContainerProps) => {
   const classes = useStyles();
   const { user } = useAppState();
   const location = useLocation();
+  const roomName = props.match.params.URLRoomName;
 
   return (
     <div className={classes.background}>
-      <TwilioLogo className={classes.twilioLogo} />
       {user && location.pathname !== '/login' && <UserMenu />}
       <div className={classes.container}>
         <div className={classes.innerContainer}>
@@ -114,7 +117,8 @@ const IntroContainer = (props: IntroContainerProps) => {
             <div className={classes.logoContainer}>
               <VideoLogo />
               <Typography variant="h6" className={classes.title}>
-                Twilio Programmable Video
+                Activity Hub <br />
+                {roomName ? `${roomName} room` : 'Create a room'}
               </Typography>
             </div>
           </div>
@@ -126,4 +130,4 @@ const IntroContainer = (props: IntroContainerProps) => {
   );
 };
 
-export default IntroContainer;
+export default withRouter(IntroContainer);

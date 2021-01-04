@@ -37,6 +37,21 @@ const useStyles = makeStyles((theme: Theme) => ({
       },
     },
   },
+  customCancel: {
+    borderColor: '#6574FE',
+    color: '#6574FE',
+    '&:hover': {
+      borderColor: '#6D4D97',
+      color: '#6D4D97',
+      backgroundColor: '#6574FE33',
+    },
+  },
+  customJoin: {
+    backgroundColor: '#6574FE',
+    '&:hover': {
+      backgroundColor: '#6D4D97',
+    },
+  },
   mobileButtonBar: {
     [theme.breakpoints.down('sm')]: {
       display: 'flex',
@@ -58,12 +73,22 @@ interface DeviceSelectionScreenProps {
 
 export default function DeviceSelectionScreen({ name, roomName, setStep }: DeviceSelectionScreenProps) {
   const classes = useStyles();
-  const { getToken, isFetching } = useAppState();
+  const { getToken, isFetching, user } = useAppState();
   const { connect, isAcquiringLocalTracks, isConnecting } = useVideoContext();
   const disableButtons = isFetching || isAcquiringLocalTracks || isConnecting;
+  let userName: string = '';
 
   const handleJoin = () => {
-    getToken(name, roomName).then(token => connect(token));
+    console.log('are we making it here?, ', user);
+    if (user) {
+      userName = user?.displayName!;
+    } else {
+      userName = name;
+    }
+    getToken(userName, roomName).then(token => {
+      console.log('are we getting a token? ', token);
+      connect(token);
+    });
   };
 
   return (
@@ -94,10 +119,16 @@ export default function DeviceSelectionScreen({ name, roomName, setStep }: Devic
               </Hidden>
             </div>
             <div className={classes.joinButtons}>
-              <Button variant="outlined" color="primary" onClick={() => setStep(Steps.roomNameStep)}>
+              <Button
+                className={classes.customCancel}
+                variant="outlined"
+                color="primary"
+                onClick={() => setStep(Steps.roomNameStep)}
+              >
                 Cancel
               </Button>
               <Button
+                className={classes.customJoin}
                 variant="contained"
                 color="primary"
                 data-cy-join-now

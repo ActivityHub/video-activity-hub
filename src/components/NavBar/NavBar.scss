@@ -1,0 +1,57 @@
+@import '~bootstrap/scss/bootstrap';
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+//Navbar styles
+.navbar {
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    font-size: 60px;
+    font-weight: 400;
+    margin-right: 15%;
+  }
+}
+
+@media only screen and (min-width: 990px) {
+  .navbar {
+    height: 10vh;
+    padding: 0 2.5rem;
+    margin-top: 3%;
+    padding-right: 4rem;
+    .navbar-collapse {
+      height: 100%;
+      .navbar-nav {
+        height: 100%;
+        width: 70%;
+        display: flex;
+        .nav-link {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex: 1;
+          color: #adadad;
+          font-size: 21px;
+        }
+        .nav-link:hover {
+          color: #6d72f7;
+        }
+      }
+      .NavBar-btn {
+        width: 20%;
+        padding: 1% 4%;
+        background: linear-gradient(180deg, #6d72f7 0%, rgba(139, 84, 208, 0.85) 99.99%, rgba(167, 176, 254, 0) 100%);
+        border-radius: 26px;
+        margin-left: 20%;
+        font-size: 24px;
+      }
+      .NavBar-btn:hover {
+        transform: scale(1.1);
+        transition: all 0.4s ease-in-out;
+      }
+    }
+  }
+}

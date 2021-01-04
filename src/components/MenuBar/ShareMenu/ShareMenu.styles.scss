@@ -1,0 +1,12 @@
+.share-menu-item {
+  &:hover {
+    background-color: #6574fe99 !important;
+    // box-shadow: inset 0em 0.1em 0em 0 rgba(255,255,255,0.5), inset 0em -0.1em 0em 0 rgba(0,0,0,0.5);
+  }
+  span {
+    // position: relative;
+    // top: 1.25vh;
+    margin-left: 1vw;
+    font-size: 0.9rem;
+  }
+}
