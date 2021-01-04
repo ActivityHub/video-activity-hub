@@ -11,9 +11,8 @@ import { ReactComponent as GoogleLogo } from './google-logo.svg';
 import Checkbox from '@material-ui/core/Checkbox';
 import { fade, withStyles, makeStyles } from '@material-ui/core/styles';
 import InputBase from '@material-ui/core/InputBase';
-import { InputLabel, Theme } from '@material-ui/core';
+import { InputLabel } from '@material-ui/core';
 import FormControl from '@material-ui/core/FormControl';
-import { BlurOnTwoTone } from '@material-ui/icons';
 
 const RegisterPage = ({ classes }) => {
   const BootstrapInput = withStyles(theme => ({
@@ -50,30 +49,30 @@ const RegisterPage = ({ classes }) => {
       },
     },
   }))(InputBase);
-  const useStyles = makeStyles(theme => ({
-    googleButton: {
-      background: 'gray',
-      color: 'rgb(0, 94, 166)',
-      borderRadius: '4px',
-      maxWidth: '65px',
-      border: '2px solid rgb(2, 122, 197)',
-      textTransform: 'none',
-      boxShadow: 'none',
-      padding: '0.3em 1em',
-      [theme.breakpoints.down('sm')]: {
-        width: '80%',
-      },
-      '&:hover': {
-        background: 'white',
-        boxShadow: 'none',
-      },
-    },
-  }));
+  // const useStyles = makeStyles(theme => ({
+  //   googleButton: {
+  //     background: 'gray',
+  //     color: 'rgb(0, 94, 166)',
+  //     borderRadius: '4px',
+  //     maxWidth: '65px',
+  //     border: '2px solid rgb(2, 122, 197)',
+  //     textTransform: 'none',
+  //     boxShadow: 'none',
+  //     padding: '0.3em 1em',
+  //     [theme.breakpoints.down('sm')]: {
+  //       width: '80%',
+  //     },
+  //     '&:hover': {
+  //       background: 'white',
+  //       boxShadow: 'none',
+  //     },
+  //   },
+  // }));
   return (
     <div className={classes.container}>
       <div className={classes.leftContainer}>
         <h1>The Hub</h1>
-        <img className={classes.image} src={RegisterImage} />
+        <img alt="Register" className={classes.image} src={RegisterImage} />
       </div>
       <form className={classes.form} noValidate autoComplete="off">
         <Typography style={{ color: '#878787', marginBottom: '20px' }} align="right" variant="subtitle">

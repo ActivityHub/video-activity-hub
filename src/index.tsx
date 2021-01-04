@@ -8,7 +8,6 @@ import App from './App';
 import AppStateProvider, { useAppState } from './state';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import ErrorDialog from './components/ErrorDialog/ErrorDialog';
-import LoginPage from './components/LoginPage/LoginPage';
 import CustomLogin from './components/CustomLogin';
 import RegisterPage from './components/Register';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';

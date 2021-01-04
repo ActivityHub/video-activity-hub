@@ -3,10 +3,10 @@ import { useHistory, useLocation } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
+// import TextField from '@material-ui/core/TextField';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import FacebookIcon from '@material-ui/icons/Facebook';
-import AppleIcon from '@material-ui/icons/Apple';
+// import AppleIcon from '@material-ui/icons/Apple';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -37,25 +37,25 @@ const CustomLogin = ({ classes }) => {
     event.preventDefault();
   };
 
-  const useStyles = makeStyles(theme => ({
-    googleButton: {
-      background: 'gray',
-      color: 'rgb(0, 94, 166)',
-      borderRadius: '4px',
-      maxWidth: '65px',
-      border: '2px solid rgb(2, 122, 197)',
-      textTransform: 'none',
-      boxShadow: 'none',
-      padding: '0.3em 1em',
-      [theme.breakpoints.down('sm')]: {
-        width: '80%',
-      },
-      '&:hover': {
-        background: 'white',
-        boxShadow: 'none',
-      },
-    },
-  }));
+  // const useStyles = makeStyles(theme => ({
+  //   googleButton: {
+  //     background: 'gray',
+  //     color: 'rgb(0, 94, 166)',
+  //     borderRadius: '4px',
+  //     maxWidth: '65px',
+  //     border: '2px solid rgb(2, 122, 197)',
+  //     textTransform: 'none',
+  //     boxShadow: 'none',
+  //     padding: '0.3em 1em',
+  //     [theme.breakpoints.down('sm')]: {
+  //       width: '80%',
+  //     },
+  //     '&:hover': {
+  //       background: 'white',
+  //       boxShadow: 'none',
+  //     },
+  //   },
+  // }));
 
   // const classes = useStyles();
   const { signIn, user, isAuthReady, facebookSignIn, twitterSignIn, gitHubSignIn } = useAppState();
@@ -166,7 +166,7 @@ const CustomLogin = ({ classes }) => {
         </Button>
       </Grid>
       <Typography align="center" variant="subtitle">
-        Forgot your login details? <a href="">Click here</a>
+        Forgot your login details? <a href="/">Click here</a>
       </Typography>
       <div>
         <h5 className={classes.horizontalText}>
