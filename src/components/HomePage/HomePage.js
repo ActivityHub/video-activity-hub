@@ -14,8 +14,6 @@ const HomePage = () => {
     <div className="homepage-wrapper" style={{ backgroundImage: `url(${background})` }}>
       <div className="homepage-title-container">
         <h1>Create experiences together</h1>
-        {console.log('This is the user', user)}
-        {console.log('This is the is auth ready', isAuthReady)}
         {user || !isAuthReady ? (
           ''
         ) : (

@@ -11,8 +11,6 @@ const firebaseConfig = {
 };
 
 export default function useFirebaseAuth() {
-  console.log('are we making it here?');
-  console.log('this is the api key', firebaseConfig.apiKey);
   const [user, setUser] = useState<firebase.User | null>(null);
   const [isAuthReady, setIsAuthReady] = useState(false);
 
